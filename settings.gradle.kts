@@ -24,6 +24,6 @@ include(":app")
 include(":core")
 include(":domain")
 include(":data")
-include(":mylibrary")
+include(":feature")
 includeBuild("build-logic")
 

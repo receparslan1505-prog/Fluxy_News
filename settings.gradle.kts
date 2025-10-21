@@ -21,3 +21,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "Fluxy News"
 include(":app")
+include(":core")
+include(":domain")
+include(":data")
+include(":mylibrary")
+includeBuild("build-logic")
+

@@ -1,4 +1,5 @@
 import com.android.build.api.dsl.ApplicationExtension
+import extensions.AndroidCommonVersions
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -17,19 +18,23 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
 
 
             extensions.configure<ApplicationExtension> {
-                compileSdk = 36
-                defaultConfig {
-                    minSdk = 26
-                    targetSdk = 36
-                    applicationId = "com.example.fluxynews"
-                    versionCode = 1
-                    versionName = "1.0"
+                with(AndroidCommonVersions) {
+
+                    compileSdk = COMPILE_SDK
+                    defaultConfig {
+                        minSdk = MIN_SDK
+                        targetSdk = TARGET_SDK
+                        applicationId = APPLICATION_ID
+                        versionCode = VERSION_CODE
+                        versionName = VERSION_NAME
+                    }
                 }
                 buildFeatures {
                     compose = true
                 }
                 composeOptions {
-                    kotlinCompilerExtensionVersion = "1.5.15" // istediğin Compose sürümü
+                    kotlinCompilerExtensionVersion =
+                        AndroidCommonVersions.COMPOSE_COMPILER_VERSION // istediğin Compose sürümü
                 }
                 // Java compile task JVM target 17
                 compileOptions {

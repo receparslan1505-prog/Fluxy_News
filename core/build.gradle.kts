@@ -1,5 +1,5 @@
 plugins {
-    id("fluxynews.android.library")
+    alias(libs.plugins.p.core)
     id("fluxynews.android.hilt")
 
 }
@@ -12,6 +12,4 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
 }

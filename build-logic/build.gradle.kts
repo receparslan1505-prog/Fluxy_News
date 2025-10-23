@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     `kotlin-dsl`
 }
@@ -11,25 +13,29 @@ gradlePlugin {
     plugins {
         register("androidApplication") {
             id = "fluxynews.android.application"
-            implementationClass = "AndroidApplicationConventionPlugin"
+            implementationClass = "plugins.AndroidApplicationConventionPlugin"
         }
         register("androidLibrary") {
             id = "fluxynews.android.library"
-            implementationClass = "AndroidLibraryConventionPlugin"
+            implementationClass = "plugins.AndroidLibraryConventionPlugin"
         }
-    }
-}
-gradlePlugin {
-    plugins {
         register("androidHilt") {
             id = "fluxynews.android.hilt"
             implementationClass = "plugins.AndroidHiltConventionPlugin"
         }
+        register("androidCore") {
+            id = "p.core"
+            implementationClass = "plugins.AndroidCoreConventionPlugin"
+        }
     }
 }
+
 dependencies {
     // Android Gradle Plugin
     implementation("com.android.tools.build:gradle:8.13.0")
+
+    implementation("org.jetbrains.kotlin:kotlin-serialization:1.9.24")
+
     // Kotlin Gradle Plugin
     implementation(kotlin("gradle-plugin", version = "2.0.21"))
     implementation("com.google.dagger:hilt-android-gradle-plugin:2.57.2")

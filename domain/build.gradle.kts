@@ -8,10 +8,3 @@ android {
     namespace = "com.example.domain"
 }
 
-dependencies {
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-}

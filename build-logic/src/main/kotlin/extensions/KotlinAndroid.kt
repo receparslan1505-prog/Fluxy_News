@@ -12,6 +12,8 @@ internal fun Project.configureAndroidKotlin(
     extension.apply {
 
         defaultConfig {
+            compileSdk = libs.findVersion("compileSdk").get().toString().toInt()
+
             targetSdk = libs.findVersion("targetSdk").get().toString().toInt()
             minSdk = libs.findVersion("minSdk").get().toString().toInt()
             applicationId = libs.findVersion("applicationId").get().toString()

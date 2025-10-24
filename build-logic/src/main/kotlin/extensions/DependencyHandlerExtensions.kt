@@ -33,6 +33,14 @@ internal fun DependencyHandler.addCommonHiltDependencies(project: Project) {
     ksp(libs(project).findLibrary("hilt.compiler").get())
 }
 
+internal fun DependencyHandler.addNeedDependencies(project: Project) {
+    implementation(libs(project).findLibrary("hilt.android").get())
+
+    implementation(libs(project).findLibrary("androidx.core.ktx").get())
+
+
+}
+
 internal fun DependencyHandler.addCommonNetworkDependencies(project: Project) {
     implementation(libs(project).findLibrary("retrofit").get())
     implementation(libs(project).findLibrary("okhttp").get())

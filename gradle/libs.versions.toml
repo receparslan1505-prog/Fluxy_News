@@ -1,19 +1,19 @@
 [versions]
 agp = "8.12.3"
-kotlin = "2.0.21"
+kotlin = "2.2.20"
 coreKtx = "1.17.0"
 lifecycleRuntimeKtx = "2.9.4"
 activityCompose = "1.11.0"
 composeBom = "2025.10.01"
 appcompat = "1.7.1"
 material = "1.13.0"
-hilt = "2.51"
+hilt = "2.57.2"
 gson = "2.13.2"
-retrofit = "2.11.0"
-chucker = "4.0.0"
-okhttp = "4.12.0"
-kotlinx-serialization = "2.0.21"
-ksp = "2.0.21-1.0.28"
+retrofit = "3.0.0"
+chucker = "4.2.0"
+okhttp = "5.2.1"
+kotlinx-serialization = "2.2.20"
+ksp = "2.2.20-2.0.4"
 
 
 compileSdk = "36"
@@ -26,6 +26,14 @@ applicationId = "com.example.fluxynews"
 
 
 [libraries]
+# Build-logic dependencies
+android-gradle-plugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-serialization-plugin = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
+ksp-gradle-plugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+hilt-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
+
+# App dependencies
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }

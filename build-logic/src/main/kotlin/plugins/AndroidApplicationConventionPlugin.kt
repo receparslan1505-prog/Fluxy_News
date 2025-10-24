@@ -15,7 +15,6 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
         with(target) {
             pluginManager.apply("com.android.application")
             pluginManager.apply("org.jetbrains.kotlin.android")
-            pluginManager.apply("com.google.devtools.ksp")
             pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
 
             // Android config
@@ -27,13 +26,6 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             dependencies {
                 implementation(libs(project).findLibrary("hilt.android").get())
                 implementation(libs(project).findLibrary("androidx.core.ktx").get())
-            }
-
-            // ⚡ KSP dependency'sini güvenli ekle
-            plugins.withId("com.google.devtools.ksp") {
-                dependencies {
-                    add("ksp", libs(project).findLibrary("hilt.compiler").get())
-                }
             }
         }
     }

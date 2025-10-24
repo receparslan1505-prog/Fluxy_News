@@ -1,5 +1,6 @@
 package plugins
 
+import extensions.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
@@ -11,8 +12,12 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
         with(target) {
             // Pluginleri uygula
             pluginManager.apply("com.google.dagger.hilt.android")
-            pluginManager.apply("org.jetbrains.kotlin.kapt")
+            pluginManager.apply("com.google.devtools.ksp")
 
+            // Hilt compiler için KSP dependency
+            dependencies {
+                add("ksp", libs(project).findLibrary("hilt.compiler").get())
+            }
 
             // Kotlin JVM target 17
             tasks.withType<KotlinJvmCompile>().configureEach {

@@ -23,6 +23,8 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 dependencies {
                     implementation(libs(project).findLibrary("hilt.android").get())
                     implementation(libs(project).findLibrary("androidx.core.ktx").get())
+                    add("implementation", project(":core"))
+
                 }
             }
         }

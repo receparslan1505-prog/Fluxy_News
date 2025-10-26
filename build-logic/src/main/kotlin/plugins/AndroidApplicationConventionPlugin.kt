@@ -24,6 +24,9 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
 
             // Normal implementation bağımlılıklarını ekle
             dependencies {
+                add("implementation", project(":feature"))
+                add("implementation", project(":domain"))
+
                 implementation(libs(project).findLibrary("hilt.android").get())
                 implementation(libs(project).findLibrary("androidx.core.ktx").get())
             }

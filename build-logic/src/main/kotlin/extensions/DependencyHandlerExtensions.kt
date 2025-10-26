@@ -41,7 +41,7 @@ internal fun DependencyHandler.addNeedDependencies(project: Project) {
 
 }
 
-internal fun DependencyHandler.addCommonNetworkDependencies(project: Project) {
+ fun DependencyHandler.addCommonNetworkDependencies(project: Project) {
     implementation(libs(project).findLibrary("retrofit").get())
     implementation(libs(project).findLibrary("okhttp").get())
     implementation(libs(project).findLibrary("retrofit.converter").get())

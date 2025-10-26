@@ -7,4 +7,7 @@ plugins {
 android {
     namespace = "com.example.domain"
 }
+dependencies {
+    implementation(libs.play.services.contextmanager)
+}
 

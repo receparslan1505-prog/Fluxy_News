@@ -1,0 +1,10 @@
+<resources>
+    <!-- Genel hata mesajları -->
+    <string name="error_no_internet">İnternet bağlantısı bulunamadı.</string>
+    <string name="error_bad_request">Geçersiz istek gönderildi.</string>
+    <string name="error_unauthorized">Yetkisiz erişim. Lütfen tekrar giriş yapın.</string>
+    <string name="error_forbidden">Bu işlemi yapmaya yetkiniz yok.</string>
+    <string name="error_not_found">İstediğiniz içerik bulunamadı.</string>
+    <string name="error_timeout">Bağlantı zaman aşımına uğradı.</string>
+    <string name="error_server">Sunucuda bir hata meydana geldi. Lütfen tekrar deneyin.</string>
+</resources>

@@ -1,4 +1,12 @@
 package com.example.core
 
-class DataStoreManager {
+import android.content.Context
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
+import javax.inject.Singleton
+
+
+@Singleton
+class DataStoreManager @Inject constructor(@ApplicationContext private val context: Context) {
+
 }
